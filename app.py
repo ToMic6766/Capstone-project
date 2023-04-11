@@ -46,9 +46,11 @@ def get_answer_from_engine(bottype, query):
 
     return ret_data
 
+# Test sentence
 @app.route('/') # 주소를 치고 갔을 경우 Test 하기 위한 부분 Home에서 
 def hello_world():
     return "Hello, Is this working?" # 이 문구가 출력이 되어야 함
+
 
 @app.route("/query/<bot_type>", methods = ["POST"])
 def query(bot_type):
