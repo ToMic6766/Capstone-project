@@ -2,7 +2,11 @@
 Ahn Sung Jin(Captain)
 
 DONG CHANG LEE
-
+    complete
+        data_to_csv.py
+    ing
+        create_training_data.py
+            [Ln 70, col 20]
 Changjun Lim
 
 SeoYangYeol
