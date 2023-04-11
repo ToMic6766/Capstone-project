@@ -1,0 +1,91 @@
+{
+    "question": [
+        {
+            "text": "학사 일정이 궁금합니다.",
+            "link": "https://www3.chosun.ac.kr/chosun/224/subview.do?enc=Zm5jdDF8QEB8JTJGc2NoZHVsbWFuYWdlJTJGY2hvc3VuJTJGMSUyRnZpZXcuZG8lM0Y%3D",
+            "items": [ 
+                {
+                    "month": "2023년 4월 학사 일정",
+                    "details": [
+                        {
+                            "title": "2학기 중간고사 기간",
+                            "content": "20일(목)~26일(수)"
+                        },
+                        {
+                            "title": "2학기 ",
+                            "content": "08일(토)~07일(금)"
+                        }//,
+                        // {
+                        //     "title": "2학기 ",
+                        //     "content": "08일(토)~07일(금)"
+                        // }
+                        
+                    ]
+                },
+                {
+                    "month": "2023년 5월 학사 일정",
+                    "details": [
+                        {
+                            "title": "근로자의 날",
+                            "content": "01일(월)~01일(월)"
+                        },
+                        {
+                            "title": "2학기 ",
+                            "content": "08일(토)~07일(금)"
+                        }//,
+                        // {
+                        //     "title": "2학기 ",
+                        //     "content": "08일(토)~07일(금)"
+                        // }
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "도서관에 대한 정보가 궁금합니다.",
+            "answer": "도서관에 대해 알려드릴게요 :)\\n",
+            "item": [
+                {
+                "title": "도서관 홈페이지 안내",
+                "content": "https://library.chosun.ac.kr"
+                },
+                {
+                    "title": "전자도서관(e-book)",
+                    "content": "도서관 홈페이지 접속 후 e-book 클릭 !"
+                },
+                {
+                    "title": "도서 대출",
+                    "content": "학부생 도서 대출 기간 알림 + 도서 연장 방법" 
+                },
+                {
+                    "title": "도서 반납",
+                    "content": "도서 반납 방법 안내"
+                },
+                {
+                    "title": "도서 예약",
+                    "content": "도서 예약 방법 안내"
+                },
+                {
+                    "title": "도서관 운영 시간",
+                    "content": "운영 시간 공지"
+                },
+                {
+                    "title": "도서관 열람실 이용 안내",
+                    "content": "열람실에 대한 내용 공지"
+                }
+            ]
+        },
+        {
+            "text": "학식 메뉴가 궁금합니다."
+        },
+        {
+            "text": "학교 편의 시설의 위치가 궁금합니다."
+        },
+        {
+            "text": "캠퍼스 지도 사진이 궁금합니다."
+        }
+    ]
+
+
+}
