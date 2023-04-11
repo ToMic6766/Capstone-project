@@ -73,6 +73,60 @@ if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 5022)
     print("Hello there")
 
+@app.route("/hello", methods=["GET"])
+def index():
+    try:
+        message = "안녕하세요, 조선대학교 챗봇입니다.\n" \
+        "현재 다음 기능을 제공하고 있습니다.\n" \
+        "1. 번호 안내 2. 장소 안내\n" \
+        "사용예시 - (학과/트랙/기관명)번호 알려줘, (건물 이름)위치 알려줘\n)" \
+        "사용예시2 - 컴퓨터공학부 번호 알려줘, 상담실 위치 알려줘\n" \
+        "원하시는 업데이트를 적어주시면 빠르게 업데이트 하겠습니다."
+
+        json_data = {
+            "message" : message
+        }
+        message = json.dumps(json_data, ensure_ascii = False)
+        message = json.loads(message)
+
+        return jsonify(message)
+
+    except Exception as ex:
+        abort(500) # 오류 발생시 500 Error 발생
+
+@app.route("/query/<bot_type>", methods = ["GET", "POST"])
+def query(bot_type):
+    body = request.get_json()
+    try:
+        if bot_type == "NORMAL":
+        #  일반 질의응답 API
+            ret = get_answer_from_engine(bottype = bot_type, query = body["query"])
+
+            return jsonify(ret)
+        
+        elif bot_type == "QUICK":
+            with open("/home/hoseo420/python_chatbot/Chatbot4Univ/chatbot_api/static/json/quick_reply.json", "r", encoding = "utf-8") as json_file:
+                jdata = json.load(json_file)
+                
+                return jdata
+            
+        else:
+            abort(404) # 정의되지 않은 bot type인 경우 404 Error
+
+    except Exception as ex:
+        abort(500) # 오류 발생시 500 Error 발생
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
