@@ -3,13 +3,14 @@ import json
 import pandas as pd
 import tensorflow as tf
 import torch
+import os
 
 from utils.BotServer import BotServer
 from utils.Preprocess import Preprocess
 from utils.FindAnswer import FindAnswer
 from models.intent.IntentModel import IntentModel
 from train_tools.qna.create_embedding_data import create_embedding_data
-
+"""
 # tensorflow gpu 메모리 할당
 # tf는 시작시 메모리를 최대로 할당하기 때문에, 0번 GPU를 2GB 메모리만 사용하도록 설정했음.
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -20,7 +21,7 @@ if gpus:
                         [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=2048)])
     except RuntimeError as e:
         print(e)
-
+"""
 # 로그 기능 구현
 from logging import handlers
 import logging
@@ -29,7 +30,7 @@ import logging
 LogFormatter = logging.Formatter('%(asctime)s,%(message)s')
 
 #handler settings
-LogHandler = handlers.TimedRotatingFileHandler(filename='./logs/chatbot.log', when='midnight', interval=1, encoding='utf-8')
+LogHandler = handlers.TimedRotatingFileHandler(filename='logs/chatbot.log', when='midnight', interval=1, encoding='utf-8')
 LogHandler.setFormatter(LogFormatter)
 LogHandler.suffix = "%Y%m%d"
 
@@ -44,14 +45,14 @@ Logger.addHandler(LogHandler)
 
 # 전처리 객체 생성
 try:
-    p = Preprocess(word2index_dic='./train_tools/dict/chatbot_dict.bin',
-                   userdic='./utils/user_dic.tsv')
+    p = Preprocess(word2index_dic='train_tools/dict/chatbot_dict.bin',
+                   userdic='utils/user_dic.tsv')
     print("텍스트 전처리기 로드 완료..")
 except: print("텍스트 전처리기 로드 실패..")
 
 # 의도 파악 모델
 try:
-    intent = IntentModel(model_name='./models/intent/intent_model.h5', preprocess=p)
+    intent = IntentModel(model_name='models/intent/intent_model.h5', preprocess=p)
     print("의도 파악 모델 로드 완료..")
 except: print("의도 파악 모델 로드 실패..")
 

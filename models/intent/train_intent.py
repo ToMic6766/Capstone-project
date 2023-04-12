@@ -1,6 +1,8 @@
 # Import
 import pandas as pd
 import tensorflow as tf
+import sys
+sys.path.append('/home/syy/Capstone-project')
 from tensorflow.keras import preprocessing
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Embedding, Dense, Dropout, Conv1D, GlobalMaxPool1D, concatenate
@@ -8,13 +10,13 @@ from tensorflow.keras.layers import Input, Embedding, Dense, Dropout, Conv1D, Gl
 from utils.Preprocess import Preprocess
 
 # Load Data
-data = pd.read_csv("train_data.csv")
+data = pd.read_csv("models/intent/train_data.csv")
 text = data['text'].tolist()
 label = data['label'].tolist()
 
 # Load preprocessor
-p = Preprocess(word2index_dic='../../train_tools/dict/chatbot_dict.bin',
-               userdic='../../utils/user_dic.tsv')
+p = Preprocess(word2index_dic='train_tools/dict/chatbot_dict.bin',
+               userdic='utils/user_dic.tsv')
 
 # Data preprocess
 sequences = []
@@ -95,4 +97,4 @@ print("Accuracy: %f" % (accuracy * 100))
 print("loss : %f" % (loss))
 
 # save model
-model.save('intent_model.h5')
+model.save('models/intent/intent_model.h5')
