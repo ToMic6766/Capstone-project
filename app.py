@@ -56,7 +56,7 @@ def get_answer_from_engine(bottype, query): # query = 사용자가 입력한 질
 # Test sentence
 @app.route('/') # 주소를 치고 갔을 경우 Test 하기 위한 부분 Home에서 
 def hello_world():
-    return "Hello, is this working?" # 이 문구가 출력이 되어야 함
+    return "Hello, is this Worrrkkkrkrkrkrkrk?" # 이 문구가 출력이 되어야 함
 
 # "/query/<bot_type>" 주소로 POST 요청이 들어오면 query 함수가 호출됨.
 @app.route("/query/<bot_type>", methods = ["POST"])
