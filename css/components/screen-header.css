@@ -1,0 +1,83 @@
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--horizontal-space);
+  padding-top: 40px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.screen-header__icons {
+  position: relative;
+}
+
+.screen-header__title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.screen-header__icons span {
+  margin-left: 20px;
+}
+
+.screen-header__notice {
+  background-color: tomato;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 85px;
+  bottom: 20px;
+}
+
+.screen-header__notice3 {
+  background-color: tomato;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 130px;
+  bottom: 20px;
+}
+
+.screen-header__notice4 {
+  background-color: tomato;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 180px;
+  bottom: 20px;
+}
+@keyframes rotateicon {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes rotateCog {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-search:hover {
+  animation: rotateicon 2s ease-in-out infinite;
+}
+.screen-header__icons .fa-comment-dots:hover {
+  animation: rotateicon 2s ease-in-out infinite;
+}
+.screen0header__icons .fa-music:hover {
+  animation: rotateicon 2s linear infinite;
+}
+.screen-header__icons .fa-cog:hover {
+  animation: rotateCog 1s linear infinite;
+}
